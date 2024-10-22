@@ -1,0 +1,21 @@
+{
+    "name": "Ix-Key",
+    "short_name": "Ix-Key",
+    "description": "Generador de contraseñas seguras y únicas al instante.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "icons": [
+        {
+            "src": "/img/icons/icon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        },
+        {
+            "src": "/img/icons/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+        }
+    ]
+}

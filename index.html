@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Ix-Key</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Dextro">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logokey.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/logokey.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="alerta" class="alerta"></div>
+    <main class="container">
+        <div class="container__contenido">
+            <div class="container__informacion">
+                <div class="container__texto">
+                    <h1>Ix-Key</h1>
+                    <h1>Generador<span class="container__texto-azul"> de Contraseñas</span></h1>
+                    <div class="container__campo">
+                        <label class="texto__parrafo">
+                            <input class="container__input" type="number" id="cantidad" placeholder="Cantidad">
+                        </label>
+                        <div class="contenedor">
+                            <button class="boton" id="generar" onclick="generar()">
+                                Generar
+                                <i class="fas fa-key"></i>
+                            </button>
+                            <button class="boton" id="limpiar" onclick="limpiar()">
+                                Limpiar
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <input class="container__contrasena" type="text" id="contrasena" placeholder="Contraseña"
+                            readonly>
+                        <button class="boton" id="copiar" onclick="copiarContrasena()">
+                            Copiar
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <p id="aviso" align="center"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer><a line="off" href="https://osmel-dev.vercel.app/">&copy; 2024 Osmel Dev</a></footer>
+
+
+    <script src="main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
+                    console.log('ServiceWorker registrado con éxito:', registration.scope);
+                }, function (err) {
+                    console.log('Error al registrar el ServiceWorker:', err);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
